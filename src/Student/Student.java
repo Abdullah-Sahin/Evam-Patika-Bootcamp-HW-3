@@ -33,8 +33,8 @@ public class Student{
      */
     public String toString(){
         return "\nId: " + getId() +
-                "\nname: " + getFullName() +
-                "\n CGPA: " + getCGPA() +
+                "\tname: " + getFullName() +
+                "\tCGPA: " + getCGPA() +
                 "\n";
     }
 }
