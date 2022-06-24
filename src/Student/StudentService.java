@@ -6,23 +6,24 @@ import java.util.Optional;
 public class StudentService {
 
     /**
-     * adds new student to the list, after addition, serves the student with highest priority
-     * and removes it from the list.
+     * adds new student to the list, after addition
      * @param student the student to be added
      * @param students list of students into which the student will be added
      */
     public static void addStudent(Student student, List<Student> students){
         students.add(student);
         Priorities.getOrderedStudents(students);
-        deleteStudent(students);
     }
 
     /**
      * Deletes first student from the list
-     * @param students list of students to be served
+     * @param students list of students to be served,
+     * @return the student served
      */
-   static void deleteStudent(List<Student> students){
-        students.remove(0);
+   public static Student deleteStudent(List<Student> students){
+        Student toDelete = students.get(0);
+        students.remove(toDelete);
+        return toDelete;
     }
 
     /**

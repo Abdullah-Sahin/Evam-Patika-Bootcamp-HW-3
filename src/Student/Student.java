@@ -34,7 +34,6 @@ public class Student{
     public String toString(){
         return "\nId: " + getId() +
                 "\tname: " + getFullName() +
-                "\tCGPA: " + getCGPA() +
-                "\n";
+                "\tCGPA: " + getCGPA();
     }
 }

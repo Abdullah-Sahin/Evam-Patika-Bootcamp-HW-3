@@ -11,14 +11,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        List<Student> students = ExampleStudentList.getSampleList();
+        List<Student> students = Priorities.getOrderedStudents(ExampleStudentList.getSampleList());
         Scanner scanner = new Scanner(System.in);
         int answer;
 
         do{
             System.out.println("Press " +
                     "\n1 to add new student to list" +
-                    "\n2 to see current students in order" +
+                    "\n2 to serve student with highest priority" +
+                    "\n3 to see current students in order" +
                     "\n0 to exit");
 
             answer = Integer.parseInt(scanner.nextLine());
@@ -41,6 +42,15 @@ public class Main {
                     break;
 
                 case 2:
+                    try{
+                        System.out.println(StudentService.deleteStudent(students) + " was served");
+                    }
+                    catch (Exception e){
+                        System.out.println("List is empty");
+                    }
+                    break;
+                case 3:
+
                     System.out.println(Priorities.getOrderedStudents(students));
                     break;
 
